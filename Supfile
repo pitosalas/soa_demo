@@ -1,0 +1,28 @@
+# Supfile
+
+networks:
+    main:
+        hosts:
+            - rails@165.227.126.51
+    queue:
+        hosts:
+            - rails@165.227.126.51
+
+commands:
+    uptime:
+        desc: chceck uptime
+        run: uptime
+    pwd:
+        desc: check pwd
+        run: pwd
+    
+    gitclone:
+        desc: git clone update of the software
+        run: https://github.com/pitosalas/soa_demo.git
+
+    gitpull:
+        desc: git pull latest
+        run: cd soa_demo; git pull
+
+    
+    
