@@ -2,13 +2,13 @@
 lock "~> 3.11.2"
 
 set :application, "soa_demo"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:pitosalas/soa_demo.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/home/rails/soa_demo"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
