@@ -24,5 +24,11 @@ commands:
         desc: git pull latest
         run: cd soa_demo; git pull
 
+    checkenv:
+        run: echo $PATH
+
+    runmain:
+        run: source .bashrc; cd soa_demo; ruby soa_publisher.rb
+
     
     
