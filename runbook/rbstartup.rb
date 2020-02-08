@@ -5,7 +5,7 @@ require_relative "rbenv"
 runbook = Runbook.book "Startup" do
   section "Run Primary" do
     step "run" do
-      server PRIMARY_SERVER_IP
+      server "rails"+PRIMARY_SERVER_IP
       command "cd soa_demo; /home/rails/.rvm/rubies/ruby-2.6.3/bin/ruby soa_publisher_node.rb", raw: true
     end
   end
