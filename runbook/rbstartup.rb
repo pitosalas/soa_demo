@@ -6,13 +6,13 @@ runbook = Runbook.book "Startup" do
   section "Run Primary" do
     step "run" do
       server PRIMARY_SERVER_IP
-      command "cd soa_demo; ruby twitter_api.rb", raw: true
+      command "cd soa_demo; /home/rails/.rvm/rubies/ruby-2.6.3/bin/ruby soa_publisher_node.rb", raw: true
     end
   end
 end
 
 if __FILE__ == $0
-  Runbook::Runner.new(runbook).run
+  Runbook::Runner.new(runbook).run(start_at: 1)
 else
   runbook
 end
