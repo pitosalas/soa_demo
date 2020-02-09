@@ -15,7 +15,6 @@ class TwitterApi
       config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
       config.access_token_secret = ENV["TWITTER_ACCESS_SECRET"]
     end
-    puts @stream.inspect
   end
 
   def for_each_tweet

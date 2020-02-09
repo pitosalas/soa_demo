@@ -14,7 +14,7 @@ runbook = Runbook.book "Uneven Layout" do
            TWITTER_ACCESS_TOKEN: TWITTER_ACCESS_TOKEN,
            TWITTER_ACCESS_SECRET: TWITTER_ACCESS_SECRET})
       server "rails@" + PRIMARY_SERVER_IP
-      command "pwd"
+      tmux_command "pwd", :bottom_right
       tmux_command "/usr/bin/ruby soa_demo/soa_publisher_node.rb;", :bottom_left
     end
   end
