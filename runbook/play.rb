@@ -4,7 +4,7 @@ require_relative "rbenv"
 
 runbook = Runbook.book "Uneven Layout" do
   layout [[
-    {:left => 20, {name: :middle, runbook_pane: true} => 60, :right => 20},
+    {:left => 1, {name: :middle, runbook_pane: true} => 3, :right => 1},
     {bottom_left: 5, bottom_right: 5}
   ]]
   section "Run Primary" do
@@ -15,7 +15,8 @@ runbook = Runbook.book "Uneven Layout" do
            TWITTER_ACCESS_SECRET: TWITTER_ACCESS_SECRET})
       server "rails@" + PRIMARY_SERVER_IP
       tmux_command "pwd", :bottom_right
-      tmux_command "/usr/bin/ruby soa_demo/soa_publisher_node.rb", :bottom_left
+      # tmux_command "/usr/bin/ruby soa_demo/soa_publisher_node.rb", :bottom_left
+      tmux_command "top", :bottom_left
     end
   end
 end
