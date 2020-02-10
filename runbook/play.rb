@@ -16,6 +16,7 @@ runbook = Runbook.book "Play Tmux Layout" do
            TWITTER_ACCESS_TOKEN: TWITTER_ACCESS_TOKEN,
            TWITTER_ACCESS_SECRET: TWITTER_ACCESS_SECRET})
       server "rails@" + PRIMARY_SERVER_IP
+      
       tmux_command "uptime", :top_right
       tmux_command "/usr/bin/ruby soa_publisher_node.rb", :middle
       tmux_command "/usr/bin/top", :left
