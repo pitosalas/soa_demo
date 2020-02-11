@@ -11,7 +11,12 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    amq-protocol (2.3.0)
     buftok (0.2.0)
+    bunny (2.14.3)
+      amq-protocol (~> 2.3, >= 2.3.0)
+    byebug (11.1.1)
+    coderay (1.1.2)
     concurrent-ruby (1.1.5)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -41,6 +46,12 @@ GEM
     pastel (0.7.3)
       equatable (~> 0.6)
       tty-color (~> 0.5)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.8.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
     public_suffix (4.0.3)
     runbook (0.16.1)
       activesupport (>= 5.0.1.x, < 7.0)
@@ -100,6 +111,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bunny
+  pry-byebug
   runbook
   twitter
 
