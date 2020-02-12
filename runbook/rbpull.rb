@@ -14,9 +14,3 @@ runbook = Runbook.book "Soa Demo" do
   end
 end
 
-
-if __FILE__ == $0
-  Runbook::Runner.new(runbook).run(start_at: 1, auto: true)
-else
-  runbook
-end

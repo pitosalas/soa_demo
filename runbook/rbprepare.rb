@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 require "runbook"
+require_relative "runbookenv.rb"
 
 runbook = Runbook.book "Soa Demo" do
-  server "rails@174.138.58.21"
+  server "rails@"+RABBIT_SERVER_IP
 
   section "check status" do
     step "git clone the repo" do

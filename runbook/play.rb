@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "runbook"
-require_relative "rbenv"
+require_relative "env"
 
 runbook = Runbook.book "Play Tmux Layout" do
   
