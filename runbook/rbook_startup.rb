@@ -1,17 +1,19 @@
 #!/usr/bin/env ruby
 require "runbook"
-require_relative "rbenv"
+require_relative "rbook_env.rb"
 
 runbook = Runbook.book "Startup" do
+  server "rails@" + PRIMARY_SERVER_IP
   section "Run Primary" do
-    step "run" do
+    step "setup env" do
       env({TWITTER_CONSUMER_KEY: TWTITER_CONSUMER_KEY,
            TWITTER_CONSUMER_SECRET: TWITTER_CONSUMER_SECRET,
            TWITTER_ACCESS_TOKEN: TWITTER_ACCESS_TOKEN,
            TWITTER_ACCESS_SECRET: TWITTER_ACCESS_SECRET})
-      server "rails@" + PRIMARY_SERVER_IP
       command "pwd"
-      command "/usr/bin/ruby soa_demo/soa_publisher_node.rb;"
+    end
+    step "Start the soa_publisher node" do
+      command "ruby soa_demo/soa_publisher_node.rb;"
     end
   end
 end

@@ -23,7 +23,10 @@ Runbook.book "Setup Primary" do
       # file is at /etc/systemd/system/soa-primary.service
     end
 
-    section "add required gems if needed" do
+    section "Add Ruby" do
+      step "Install Ruby" do
+        exec "apt install ruby"
+      end
       step "gem install bundler"
       step "bundle"
     end
