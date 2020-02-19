@@ -22,5 +22,12 @@ Runbook.book "Setup Primary" do
     section "Add soa-primary systemctl file if needed" do
       # file is at /etc/systemd/system/soa-primary.service
     end
+
+    section "add required gems if needed" do
+      step "gem install bundler"
+      step "bundle"
+    end
+
+    section "start the service"
   end
 end
