@@ -5,6 +5,7 @@ require_relative 'tweet_queue'
 
 class SoaPublisher
   def run
+    puts "*********************"
     @xface = TwitterApi.new
     @queue = TweetQueue.new
     @queue.establish

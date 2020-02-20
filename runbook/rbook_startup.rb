@@ -10,7 +10,7 @@ runbook = Runbook.book "Startup" do
            TWITTER_CONSUMER_SECRET: TWITTER_CONSUMER_SECRET,
            TWITTER_ACCESS_TOKEN: TWITTER_ACCESS_TOKEN,
            TWITTER_ACCESS_SECRET: TWITTER_ACCESS_SECRET})
-      command "pwd"
+      command "printenv | grep TWITTER"
     end
     step "Start the soa_publisher node" do
       command "ruby soa_demo/soa_publisher_node.rb;"
