@@ -25,12 +25,12 @@ Runbook.book "Setup Primary" do
 
     section "Add Ruby" do
       step "Install Ruby" do
-        exec "apt install ruby"
+        command "sudo apt update"
+        command "sudo apt install ruby-full"
       end
       step "gem install bundler"
       step "bundle"
     end
-
     section "start the service"
   end
 end

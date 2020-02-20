@@ -1,6 +1,5 @@
 require 'twitter'
 require 'bunny'
-require 'pry-byebug'
 require_relative 'twitter_api'
 require_relative 'tweet_queue'
 
