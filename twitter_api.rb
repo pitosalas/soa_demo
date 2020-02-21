@@ -14,6 +14,10 @@ class TwitterApi
       config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
       config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
       config.access_token_secret = ENV["TWITTER_ACCESS_SECRET"]
+<<<<<<< HEAD
+=======
+      Syslog.log(Syslog::LOG_CRIT, "Config: " + config.inspect)
+>>>>>>> 41d2361ab194645d2a8a58b16d20b3ad6514ede0
     end
   end
 
