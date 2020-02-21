@@ -1,4 +1,10 @@
+require 'syslog/logger'
+
 class TwitterApi
+  def initialize
+    @log = Syslog::Logger.new 'soa_publisher'
+  end
+
   def client_connect
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
@@ -14,13 +20,10 @@ class TwitterApi
       config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
       config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
       config.access_token_secret = ENV["TWITTER_ACCESS_SECRET"]
-<<<<<<< HEAD
-=======
-      Syslog.log(Syslog::LOG_CRIT, "Config: " + config.inspect)
->>>>>>> 41d2361ab194645d2a8a58b16d20b3ad6514ede0
+      @log.info 'Stream Connected'  
     end
   end
-
+  
   def for_each_tweet
     @stream.sample do |tweet|
       yield tweet if tweet.is_a?(Twitter::Tweet) && tweet.lang == "en"
