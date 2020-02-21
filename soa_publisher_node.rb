@@ -11,6 +11,7 @@ class SoaPublisher
     @queue.establish
     @xface.stream_connect
     @xface.for_each_tweet do |t|
+      puts "."
       @queue.post(@xface.tweet_to_json(t))
     end
   end

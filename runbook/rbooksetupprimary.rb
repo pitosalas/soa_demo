@@ -23,6 +23,12 @@ Runbook.book "Setup Primary" do
       # file is at /etc/systemd/system/soa-primary.service
     end
 
+    section "Add Papertrail" do
+      step "install papertrail cli" do
+        # [sudo] gem install papertrail
+      end
+    end
+
     section "Add Ruby" do
       step "Install Ruby" do
         command "sudo apt update"
