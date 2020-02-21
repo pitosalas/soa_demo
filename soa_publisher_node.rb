@@ -16,11 +16,7 @@ class SoaPublisher
     @xface.stream_connect
     puts "connected"
     @xface.for_each_tweet do |t|
-<<<<<<< HEAD
-      puts "."
-=======
       log.info '.'
->>>>>>> 41d2361ab194645d2a8a58b16d20b3ad6514ede0
       @queue.post(@xface.tweet_to_json(t))
     end
   end
