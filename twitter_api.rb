@@ -14,8 +14,6 @@ class TwitterApi
       config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
       config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
       config.access_token_secret = ENV["TWITTER_ACCESS_SECRET"]
-      `printenv |grep TWITTER`
-      puts "====="
     end
   end
 
