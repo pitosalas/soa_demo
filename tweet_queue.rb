@@ -1,4 +1,8 @@
 class TweetQueue
+  def initialize
+    @log = Syslog::Logger.new 'soa Tweetqueue'
+  end
+
   def establish
     connection = Bunny.new
     connection.start
@@ -7,9 +11,9 @@ class TweetQueue
   end
 
   def listen
-    puts " Waiting for messages ..."
+    @log.info " Waiting for messages ..."
     @queue.subscribe(block: true) do |_delivery_info, _properties, body|
-      puts " [x] Received #{body}"
+      @log.info "Received #{body}"
     end
   rescue Interrupt => _e
     connection.close
