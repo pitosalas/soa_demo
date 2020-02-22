@@ -2,12 +2,15 @@
 Description=SoaPublisher
 Requires=network.target
 
+[Environment]
+
+
 [Service]
 Type=simple
 User=rails
 Group=rails
 WorkingDirectory=/home/rails/soa_demo/
-ExecStart=/bin/bash -lc 'ruby /home/rails/soa_demo/soa_publisher_node.rb'
+ExecStart=/bin/bash -lc 'ruby /home/rails/soa_demo/soa_subscriber_node.rb'
 TimeoutSec=30s
 RestartSec=30s
 Restart=always
