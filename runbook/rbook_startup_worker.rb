@@ -2,17 +2,20 @@
 require "runbook"
 require_relative "rbook_env.rb"
 
-runbook = Runbook.book "Startup Worker" do
+Runbook.book "Startup Worker" do
+  server "rails@" + WORKER_SERVER_IP
+  
   section "Run Primary" do
-    server "rails@" + WORKER_SERVER_IP
     step "Start the soa_publisher node" do
       env({TWITTER_CONSUMER_KEY: TWTITER_CONSUMER_KEY,
+           PRIMARY_SERVER_IP: PRIMARY_SERVER_IP,
+           WORKER_SERVER_IP: WORKER_SERVER_IP,
+           RABBIT_SERVER_IP: RABBIT_SERVER_IP,
            TWITTER_CONSUMER_SECRET: TWITTER_CONSUMER_SECRET,
            TWITTER_ACCESS_TOKEN: TWITTER_ACCESS_TOKEN,
            TWITTER_ACCESS_SECRET: TWITTER_ACCESS_SECRET})
-      command "printenv | grep TWITTER"
-      #command "ruby /home/rails/soa_demo/soa_publisher_node.rb"
+      server "rails@" + WORKER_SERVER_IP
+      command "source ~/.rvm/scripts/rvm; ruby /home/rails/soa_demo/soa_publisher_node.rb", raw:true
     end
   end
 end
-
