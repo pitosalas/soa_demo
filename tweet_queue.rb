@@ -4,7 +4,7 @@ class TweetQueue
   end
 
   def establish
-    puts ENV["RABBIT_SERVER_IP"]
+    pu@log.info("Connecting to Rabbit: #{ENV["RABBIT_SERVER_IP"]}"
     connection = Bunny.new("amqp://#{ENV["RABBIT_SERVER_IP"]}5672")
     connection.start
     channel = connection.create_channel
