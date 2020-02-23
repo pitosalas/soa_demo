@@ -4,8 +4,8 @@ class TweetQueue
   end
 
   def establish
-    puts ENV[RABBIT_SERVER_IP]
-    connection = Bunny.new("amqp://#{ENV[RABBIT_SERVER_IP]}5672")
+    puts ENV["RABBIT_SERVER_IP"]
+    connection = Bunny.new("amqp://#{ENV["RABBIT_SERVER_IP"]}5672")
     connection.start
     channel = connection.create_channel
     @queue = channel.queue('stream_tweets')
